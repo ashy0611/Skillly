@@ -1,0 +1,436 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use App\Models\Skill;
+
+class SkillSeeder extends Seeder
+{
+    public function run(): void
+    {
+        /*
+        |--------------------------------------------------------------------------
+        | TECHNICAL SKILLS (≈60%)
+        |--------------------------------------------------------------------------
+        */
+
+        $programmingLanguages = [
+            ['C', 'technical', 'c language'],
+            ['C++', 'technical', 'c++, cpp'],
+            ['C#', 'technical', 'c#, c sharp'],
+            ['Java', 'technical', 'java'],
+            ['Python', 'technical', 'python, py'],
+            ['JavaScript', 'technical', 'javascript, js'],
+            ['TypeScript', 'technical', 'typescript, ts'],
+            ['Go', 'technical', 'golang, go language'],
+            ['Rust', 'technical', 'rust'],
+            ['Ruby', 'technical', 'ruby'],
+            ['PHP', 'technical', 'php'],
+            ['Kotlin', 'technical', 'kotlin'],
+            ['Swift', 'technical', 'swift'],
+            ['Dart', 'technical', 'dart'],
+            ['R', 'technical', 'r language'],
+            ['Scala', 'technical', 'scala'],
+            ['MATLAB', 'technical', 'matlab'],
+            ['Bash', 'technical', 'bash scripting'],
+            ['PowerShell', 'technical', 'powershell'],
+            ['Groovy', 'technical', 'groovy'],
+        ];
+
+        $frontend = [
+            ['HTML', 'technical', 'html'],
+            ['CSS', 'technical', 'css'],
+            ['React', 'technical', 'react, reactjs'],
+            ['Angular', 'technical', 'angular'],
+            ['Vue', 'technical', 'vue, vuejs'],
+            ['Svelte', 'technical', 'svelte'],
+            ['Next.js', 'technical', 'nextjs, next js'],
+            ['Bootstrap', 'technical', 'bootstrap'],
+            ['Tailwind CSS', 'technical', 'tailwind'],
+            ['Redux', 'technical', 'redux'],
+            ['Webpack', 'technical', 'webpack'],
+            ['Vite', 'technical', 'vite'],
+            ['jQuery', 'technical', 'jquery'],
+        ];
+
+        $backend = [
+            ['Node.js', 'technical', 'nodejs, node js'],
+            ['Express', 'technical', 'express, expressjs'],
+            ['Laravel', 'technical', 'laravel'],
+            ['Spring Boot', 'technical', 'spring boot'],
+            ['Django', 'technical', 'django'],
+            ['Flask', 'technical', 'flask'],
+            ['.NET', 'technical', '.net, dotnet'],
+            ['GraphQL', 'technical', 'graphql'],
+            ['REST API', 'technical', 'rest api, restful api'],
+            ['gRPC', 'technical', 'grpc'],
+            ['Microservices', 'technical', 'microservices'],
+            ['JWT', 'technical', 'jwt, json web token'],
+            ['OAuth', 'technical', 'oauth'],
+            ['WebSockets', 'technical', 'web sockets'],
+            ['API Integration', 'technical', 'api integration'],
+        ];
+
+        $databases = [
+            ['SQL', 'technical', 'sql'],
+            ['MySQL', 'technical', 'mysql'],
+            ['PostgreSQL', 'technical', 'postgresql, postgres'],
+            ['MongoDB', 'technical', 'mongodb, mongo'],
+            ['Redis', 'technical', 'redis'],
+            ['Oracle', 'technical', 'oracle db'],
+            ['SQLite', 'technical', 'sqlite'],
+            ['Cassandra', 'technical', 'cassandra'],
+            ['DynamoDB', 'technical', 'dynamodb'],
+            ['Elasticsearch', 'technical', 'elasticsearch'],
+            ['Firebase', 'technical', 'firebase'],
+            ['MariaDB', 'technical', 'mariadb'],
+            ['Database Optimization', 'technical', 'db optimization'],
+            ['Data Modeling', 'technical', 'data modeling'],
+            ['NoSQL', 'technical', 'nosql'],
+            ['Data Warehousing', 'technical', 'data warehousing'], // Added missing
+        ];
+        $cyberSecurity=[
+            ['Network Security', 'technical', 'network security'],
+            ['Vulnerability Assessment', 'technical', 'vulnerability assessment'],
+            ['Incident Response', 'technical', 'incident response'],
+            ['SIEM Tools', 'technical', 'siem tools'],
+            ['Penetration Testing', 'technical', 'penetration testing'],
+            ['Cloud Security', 'technical', 'cloud security'],
+            ['Secure System Design', 'technical', 'secure system design'],
+            ['Encryption', 'technical', 'encryption'],
+            ['AWS Security', 'technical', 'aws security'],
+            ['Web Application Security', 'technical', 'web application security'],
+            ['Social Engineering', 'technical', 'social engineering'],
+            ['Risk Assessment', 'technical', 'risk assessment'],
+            ['Compliance', 'technical', 'compliance'],
+            ['Security Policies', 'technical', 'security policies'],
+        ];
+        $devopsCloud = [
+            ['Docker', 'technical', 'docker'],
+            ['Kubernetes', 'technical', 'kubernetes, k8s'],
+            ['AWS', 'technical', 'aws, amazon web services'],
+            ['Azure', 'technical', 'azure'],
+            ['GCP', 'technical', 'gcp, google cloud'],
+            ['Terraform', 'technical', 'terraform'],
+            ['Ansible', 'technical', 'ansible'],
+            ['Jenkins', 'technical', 'jenkins'],
+            ['CI/CD', 'technical', 'ci cd, cicd'],
+            ['Git', 'technical', 'git, version control'],
+            ['Linux', 'technical', 'linux'],
+            ['Shell Scripting', 'technical', 'shell scripting'],
+            ['Load Balancing', 'technical', 'load balancing'],
+            ['Cloud Architecture', 'technical', 'cloud architecture'],
+            ['Infrastructure as Code', 'technical', 'iac'],
+            ['Monitoring Tools', 'technical', 'monitoring tools'], 
+            ['Scripting', 'technical', 'scripting'], 
+            ['Cloud Platforms', 'technical', 'cloud platforms'],
+            ['Windows Server', 'technical', 'windows server'],
+            ['Networking', 'technical', 'networking'],
+            ['Active Directory', 'technical', 'active directory'],
+            ['Backup & Recovery', 'technical', 'backup recovery'],
+            ['Routing & Switching', 'technical', 'routing switching'],
+            ['Firewall Management', 'technical', 'firewall management'],
+            ['VPN', 'technical', 'vpn'],
+            ['AWS Networking', 'technical', 'aws networking'],
+            ['Cisco Devices', 'technical', 'cisco devices'],
+        ];
+
+        $dataAI = [
+            ['Machine Learning', 'technical', 'machine learning, ml'],
+            ['Deep Learning', 'technical', 'deep learning'],
+            ['NLP', 'technical', 'natural language processing'],
+            ['Pandas', 'technical', 'pandas'],
+            ['NumPy', 'technical', 'numpy'],
+            ['TensorFlow', 'technical', 'tensorflow'],
+            ['PyTorch', 'technical', 'pytorch'],
+            ['Data Analysis', 'technical', 'data analysis'],
+            ['Data Visualization', 'technical', 'data visualization'],
+            ['Statistics', 'technical', 'statistics'],
+            ['Power BI', 'technical', 'power bi'],
+            ['Tableau', 'technical', 'tableau'],
+            ['Excel', 'technical', 'microsoft excel, excel'],
+            ['Big Data', 'technical', 'big data'],
+            ['ETL', 'technical', 'etl'],
+            ['Data Wrangling', 'technical', 'data wrangling'], // Added missing
+            ['Computer Vision', 'technical', 'computer vision'], // Added missing
+        ];
+
+        $softSkills = [
+            ['Communication', 'soft', 'communication skills'],
+            ['Leadership', 'soft', 'leadership'],
+            ['Teamwork', 'soft', 'team work'],
+            ['Problem Solving', 'soft', 'problem solving'],
+            ['Critical Thinking', 'soft', 'critical thinking'],
+            ['Analytical Thinking', 'soft', 'analytical thinking'],
+            ['Creativity', 'soft', 'creativity'],
+            ['Adaptability', 'soft', 'adaptability'],
+            ['Time Management', 'soft', 'time management'],
+            ['Conflict Resolution', 'soft', 'conflict resolution'],
+            ['Decision Making', 'soft', 'decision making'],
+            ['Emotional Intelligence', 'soft', 'emotional intelligence'],
+            ['Negotiation', 'soft', 'negotiation skills'],
+            ['Public Speaking', 'soft', 'public speaking'],
+            ['Presentation Skills', 'soft', 'presentation'],
+            ['Collaboration', 'soft', 'collaboration'],
+            ['Strategic Thinking', 'soft', 'strategic thinking'],
+            ['Multitasking', 'soft', 'multitasking'],
+            ['Organization', 'soft', 'organizational skills'],
+            ['Attention to Detail', 'soft', 'attention to detail'],
+        ];
+
+        $businessManagement = [
+            ['Project Management', 'technical', 'project management'],
+            ['Agile', 'technical', 'agile'],
+            ['Scrum', 'technical', 'scrum'],
+            ['Kanban', 'technical', 'kanban'],
+            ['Business Analysis', 'technical', 'business analysis'],
+            ['Stakeholder Management', 'technical', 'stakeholder management'],
+            ['Product Management', 'technical', 'product management'],
+            ['Risk Management', 'technical', 'risk management'],
+            ['Market Research', 'technical', 'market research'],
+            ['Operations Management', 'technical', 'operations management'],
+            ['Project Planning', 'technical', 'project planning'],
+            ['Scheduling', 'technical', 'scheduling'],
+            ['Agile Methodologies', 'technical', 'agile methodologies'],
+            ['MS Project', 'technical', 'ms project'],
+            ['Requirement Gathering', 'technical', 'requirement gathering'],
+            ['Documentation', 'technical', 'documentation'],
+            ['Stakeholder Communication', 'technical', 'stakeholder communication'],
+            ['Process Modeling', 'technical', 'process modeling'],
+            ['Scrum Framework', 'technical', 'scrum framework'],
+            ['Facilitation', 'soft', 'facilitation'],
+            ['Coaching', 'soft', 'coaching'],
+            ['Process Management', 'technical', 'process management'],
+            ['Operational Planning', 'technical', 'operational planning'],
+            ['Team Leadership', 'soft', 'team leadership'],
+            ['Office Management', 'technical', 'office management'],
+            ['MS Office', 'technical', 'ms office'],
+            ['Record Keeping', 'technical', 'record keeping'],
+            ['Customer Service', 'soft', 'customer service'],
+            ['Customer Retention', 'soft', 'customer retention'],
+            ['CRM Software', 'technical', 'crm software'],
+            ['Team Collaboration', 'soft', 'team collaboration'],
+
+        ];
+
+        $marketingSkills = [
+            ['SEO', 'technical', 'seo, search engine optimization'],
+            ['SEM', 'technical', 'sem, search engine marketing'],
+            ['Google Analytics', 'technical', 'google analytics'],
+            ['Social Media Marketing', 'technical', 'social media marketing'],
+            ['Content Marketing', 'technical', 'content marketing'],
+            ['Email Marketing', 'technical', 'email marketing'],
+            ['PPC Advertising', 'technical', 'ppc, pay per click'],
+            ['Brand Management', 'technical', 'brand management'],
+            ['Campaign Management', 'technical', 'campaign management'],
+            ['Copywriting', 'technical', 'copywriting'],
+            ['SEM/PPC', 'technical', 'sem ppc'],
+            ['Analytics', 'technical', 'analytics'],
+            ['Google Ads', 'technical', 'google ads'],
+            ['Facebook Ads', 'technical', 'facebook ads'],
+            ['Marketing Strategy', 'technical', 'marketing strategy'],
+            ['Campaign Planning', 'technical', 'campaign planning'],
+            ['Digital Marketing', 'technical', 'digital marketing'],
+            ['SEO/SEM', 'technical', 'seo sem'],
+            ['On-Page SEO', 'technical', 'on-page seo'],
+            ['Off-Page SEO', 'technical', 'off-page seo'],
+            ['Keyword Research', 'technical', 'keyword research'],
+            ['Content Optimization', 'technical', 'content optimization'],
+            ['Technical SEO', 'technical', 'technical seo'],
+            ['Google Search Console', 'technical', 'google search console'],
+            ['SEO Tools (Ahrefs/SEMRush)', 'technical', 'seo tools, ahrefs, semrush'],
+            ['Content Planning', 'technical', 'content planning'],
+            ['Content Creation', 'technical', 'content creation'],
+            ['Content Management Systems (CMS)', 'technical', 'cms'],
+            ['Team Leadership', 'soft', 'team leadership'],
+        ];
+
+        $financeSkills = [
+            ['Accounting', 'technical', 'accounting'],
+            ['Financial Modeling', 'technical', 'financial modeling'],
+            ['Financial Reporting', 'technical', 'financial reporting'],
+            ['Budgeting', 'technical', 'budgeting'],
+            ['Forecasting', 'technical', 'financial forecasting'],
+            ['Taxation', 'technical', 'taxation'],
+            ['Auditing', 'technical', 'auditing'],
+            ['Tally', 'technical', 'tally'],
+            ['QuickBooks', 'technical', 'quickbooks'],
+            ['Cost Analysis', 'technical', 'cost analysis'],
+            ['Bookkeeping', 'technical', 'bookkeeping'],
+            ['Accounting Principles', 'technical', 'accounting principles'],
+            ['MS Excel', 'technical', 'ms excel'],
+            ['ERP Systems', 'technical', 'erp systems'],
+            ['Auditing Basics', 'technical', 'auditing basics'],
+            ['Excel/Spreadsheets', 'technical', 'excel, spreadsheets'],
+            ['Financial Analysis', 'technical', 'financial analysis'],
+            ['Valuation', 'technical', 'valuation'],
+            ['Investment Research', 'technical', 'investment research'],
+            ['Portfolio Management', 'technical', 'portfolio management'],
+            ['Audit Planning', 'technical', 'audit planning'],
+            ['Internal Controls', 'technical', 'internal controls'],
+            ['Financial Planning', 'technical', 'financial planning'],
+            ['Bookkeeping', 'technical', 'bookkeeping'],
+            ['Accounting Principles', 'technical', 'accounting principles'],
+            ['MS Excel', 'technical', 'ms excel'],
+            ['ERP Systems', 'technical', 'erp systems'],
+            ['Auditing Basics', 'technical', 'auditing basics'],
+            ['Excel/Spreadsheets', 'technical', 'excel, spreadsheets'],
+            ['Financial Analysis', 'technical', 'financial analysis'],
+            ['Valuation', 'technical', 'valuation'],
+            ['Investment Research', 'technical', 'investment research'],
+            ['Portfolio Management', 'technical', 'portfolio management'],
+            ['Audit Planning', 'technical', 'audit planning'],
+            ['Internal Controls', 'technical', 'internal controls'],
+            ['Financial Planning', 'technical', 'financial planning'],
+        ];
+
+        $hrSkills = [
+            ['Recruitment', 'technical', 'recruitment'],
+            ['Talent Acquisition', 'technical', 'talent acquisition'],
+            ['Payroll Management', 'technical', 'payroll'],
+            ['HR Policies', 'technical', 'hr policies'],
+            ['Employee Engagement', 'technical', 'employee engagement'],
+            ['Performance Management', 'technical', 'performance management'],
+            ['Onboarding', 'technical', 'onboarding'],
+            ['Training & Development', 'technical', 'training and development'],
+            ['Labor Law Compliance', 'technical', 'labor law'],
+            ['Recruitment Strategy', 'technical', 'recruitment strategy'], // Added
+            ['Candidate Sourcing', 'technical', 'candidate sourcing'],
+            ['Employee Relations', 'technical', 'employee relations'],
+            ['HR Software (HRMS)', 'technical', 'hr software, hrms'],
+            ['Interviewing', 'technical', 'interviewing'],
+            ['Employer Branding', 'technical', 'employer branding'],
+            ['HR Software (ATS)', 'technical', 'hr software, ats'],
+            ['Negotiation Skills', 'technical', 'negotiation skills'], 
+        ];
+
+        $salesSkills = [
+            ['Lead Generation', 'technical', 'lead generation'],
+            ['CRM', 'technical', 'customer relationship management, crm'],
+            ['Salesforce', 'technical', 'salesforce'],
+            ['Client Relationship Management', 'technical', 'client relationship'],
+            ['B2B Sales', 'technical', 'b2b sales'],
+            ['B2C Sales', 'technical', 'b2c sales'],
+            ['Revenue Forecasting', 'technical', 'revenue forecasting'],
+            ['Cold Calling', 'technical', 'cold calling'],
+        ];
+
+        $qaTestingSkills = [
+            ['OOP', 'technical', 'object oriented programming, oop'],
+            ['PHPUnit', 'technical', 'phpunit'],
+            ['Responsive Design', 'technical', 'responsive design'],
+            ['Vue.js', 'technical', 'vue.js'],
+            ['Manual Testing', 'technical', 'manual testing'],
+            ['Test Cases', 'technical', 'test cases'],
+            ['Bug Tracking', 'technical', 'bug tracking'],
+            ['SDLC', 'technical', 'software development life cycle, sdlc'],
+            ['STLC', 'technical', 'software testing life cycle, stlc'],
+            ['Jira', 'technical', 'jira'],
+            ['Regression Testing', 'technical', 'regression testing'],
+            ['Functional Testing', 'technical', 'functional testing'],
+            ['API Testing', 'technical', 'api testing'],
+            ['Selenium', 'technical', 'selenium'],
+            ['Postman', 'technical', 'postman'],
+            ['Cypress', 'technical', 'cypress'],
+            ['Test Documentation', 'technical', 'test documentation'],
+            ['Automation Testing', 'technical', 'automation testing'],
+            ['TestNG', 'technical', 'testng'],
+            ['JUnit', 'technical', 'junit'],
+            ['Flutter', 'technical', 'flutter'],
+            ['React Native', 'technical', 'react native'],
+            ['Android', 'technical', 'android development'],
+            ['iOS', 'technical', 'ios development'],
+            ['Objective-C', 'technical', 'objective c'],
+            ['Push Notifications', 'technical', 'push notifications'],
+            ['App Deployment', 'technical', 'app deployment'],
+        ];
+
+        $designSkills = [
+            ['UI Design', 'technical', 'ui design'],
+            ['UX Research', 'technical', 'ux research'],
+            ['Wireframing & Prototyping', 'technical', 'wireframing, prototyping'],
+            ['Design Thinking', 'technical', 'design thinking'],
+            ['Figma', 'technical', 'figma'],
+            ['Adobe XD', 'technical', 'adobe xd'],
+            ['Interaction Design', 'technical', 'interaction design'],
+            ['Visual Design', 'technical', 'visual design'],
+            ['Typography', 'technical', 'typography'],
+            ['Color Theory', 'technical', 'color theory'],
+            ['Branding', 'technical', 'branding'],
+            ['Adobe Photoshop', 'technical', 'adobe photoshop'],
+            ['Adobe Illustrator', 'technical', 'adobe illustrator'],
+            ['InDesign', 'technical', 'indesign'],
+            ['User Testing', 'technical', 'user testing'],
+        ];
+
+        $emergingTechSkills = [
+            ['Solidity', 'technical', 'solidity'],
+            ['Smart Contracts', 'technical', 'smart contracts'],
+            ['Ethereum', 'technical', 'ethereum'],
+            ['Cryptography', 'technical', 'cryptography'],
+            ['Web3.js', 'technical', 'web3.js'],
+            ['Blockchain Architecture', 'technical', 'blockchain architecture'],
+            ['APIs', 'technical', 'apis'],
+            ['ARKit', 'technical', 'arkit'],
+            ['ARCore', 'technical', 'arcore'],
+            ['VR Hardware Integration', 'technical', 'vr hardware'],
+            ['Shaders & Graphics', 'technical', 'shaders, graphics'],
+            ['Embedded Systems', 'technical', 'embedded systems'],
+            ['IoT Protocols', 'technical', 'mqtt, coap'],
+            ['Sensor Integration', 'technical', 'sensor integration'],
+            ['Microcontrollers', 'technical', 'arduino, raspberry pi'],
+            ['Unity3D', 'technical', 'unity3d'],
+            ['Unreal Engine', 'technical', 'unreal engine'],
+            ['3D Modeling', 'technical', '3d modeling'],
+            ['C# / C++ Programming', 'technical', 'c#, cpp programming'],
+            ['ARKit / ARCore', 'technical', 'arkit, arcore'],
+            ['UX for AR/VR', 'technical', 'ux for ar vr'],
+            ['Cloud IoT Platforms', 'technical', 'cloud iot platforms'],
+            ['Programming (Python/C)', 'technical', 'python, c'],
+            ['Technical Architecture', 'technical', 'technical architecture'],
+            ['Code Review', 'technical', 'code review'],
+            ['Team Leadership', 'soft', 'team leadership'],
+            ['Mentoring', 'soft', 'mentoring'],
+            ['DevOps Knowledge', 'technical', 'devops knowledge'],
+            ['IoT Protocols (MQTT, CoAP)', 'technical', 'iot protocols, mqtt, coap'],
+            ['Microcontrollers (Arduino/Raspberry Pi)', 'technical', 'arduino, raspberry pi, microcontrollers'],
+            ['Data Analytics', 'technical', 'data analytics'],
+        ];
+
+        /*
+        |--------------------------------------------------------------------------
+        | MERGE & INSERT
+        |--------------------------------------------------------------------------
+        */
+
+        $allSkills = array_merge(
+            $programmingLanguages,
+            $frontend,
+            $backend,
+            $databases,
+            $cyberSecurity,
+            $devopsCloud,
+            $dataAI,
+            $softSkills,
+            $businessManagement,
+            $marketingSkills,
+            $financeSkills,
+            $hrSkills,
+            $salesSkills,
+            $qaTestingSkills,
+            $designSkills,
+            $emergingTechSkills
+        );
+
+        foreach ($allSkills as $skill) {
+            Skill::updateOrCreate(
+                ['skill_name' => $skill[0]],
+                [
+                    'skill_type' => $skill[1],
+                    'keywords' => strtolower($skill[2]),
+                ]
+            );
+        }
+    }
+}
